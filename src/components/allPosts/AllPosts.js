@@ -1,9 +1,24 @@
 import React from 'react'
+import Header from '../header/Header'
+import Friends from '../friends/Friends'
+import OnePost from '../onePost/OnePost'
 
-function AllPosts(){
+function AllPosts(props){
     return(
         <div>
-            AllPosts
+            <section>
+                <Header/>
+                <div>
+                    <img alt='profile pic'/>
+                    <button>make a post</button>
+                </div>
+            </section>
+            <section>
+                <Friends/>
+            </section>
+            <section>
+                <OnePost/>
+            </section>
         </div>
     )
 }
