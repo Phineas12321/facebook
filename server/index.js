@@ -33,3 +33,4 @@ app.post('/api/register', authCtrl.register)
 app.post('/api/login', authCtrl.login)
 
 app.post('/api/posts', ctrl.createPost )
+app.get('/api/posts', ctrl.getPosts)
