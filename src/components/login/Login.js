@@ -9,7 +9,7 @@ function Login(props){
     const [password, setPassword] = useState('')
     const [first_name, setFirstName] = useState('')
     const [last_name, setLastName] = useState('')
-
+    
     const emailInput = (e) => {
         setEmail(e.target.value)
     }
