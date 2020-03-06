@@ -34,3 +34,5 @@ app.post('/api/login', authCtrl.login)
 
 app.post('/api/posts', ctrl.createPost )
 app.get('/api/posts', ctrl.getPosts)
+app.put('/api/posts/:id', ctrl.editPost)
+app.delete('/api/posts/:id', ctrl.deletePost)
