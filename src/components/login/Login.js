@@ -48,26 +48,25 @@ function Login(props){
                     facebook or whatever
                 </h1>
                 <div className='login-inputs'>
-                    <input placeholder='Email' type='email' onChange={emailInput} />
-                    <input placeholder='Password' type='password' maxLength='20' onChange={passwordInput} />
+                    <input className='l-in' placeholder='Email' type='email' onChange={emailInput} />
+                    <input className='l-in' placeholder='Password' type='password' maxLength='20' onChange={passwordInput} />
                 </div>
                 <div>
                     <button className='login-button' onClick={handleLogin} >Log In</button>
                 </div>
 
             </section>
-            <section>
+            <section className='login-register'>
                 <h1>
-                    Create a New Account
+                    Create New Account
                 </h1>
-                <div>
-                    <input placeholder='First Name' onChange={firstNameInput} />
-                    <input placeholder='Last Name' onChange={lastNameInput} />
-                    <input placeholder='Email' type='email' onChange={emailInput} />
-                    <input placeholder='Password' type='password' maxLength='20' onChange={passwordInput} />
+                <div className='login-register-inputs'>
+                    <input className='lr-in' placeholder='First Name' onChange={firstNameInput} />
+                    <input className='lr-in' placeholder='Last Name' onChange={lastNameInput} />
+                    <input className='lr-in' placeholder='Email' type='email' onChange={emailInput} />
+                    <input className='lr-in' placeholder='Password' type='password' maxLength='20' onChange={passwordInput} />
                 </div>
-                
-                <button onClick={handleRegister} >Sign up</button>
+                <button className='login-register-button' onClick={handleRegister} >Sign Up</button>
             </section>
         </div>
     )
