@@ -1,5 +1,22 @@
 @import '../../../sass/vars';
 
-// .whatever{
-//     flex(column, center, center)
-// }
+.login-login{
+    height: 150px;
+    background: $fbBlue;
+    color: $fbWhite;
+    @include flex(column, flex-start, center)
+}
+
+.login-inputs{
+    width: 250px;
+    @include flex(row, space-between, center)
+}
+
+.login-button{
+    @include border(none, 3px);
+    margin-top: 18px;
+    background: $fbBlue;
+    box-shadow: black 0px 0px 4px -1px;
+    color: $fbWhite;
+    border: none;
+}

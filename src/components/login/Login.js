@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { getUser } from '../../redux/reducer'
+import './login.scss'
 //import {connect} from 'react-redux'
 
 function Login(props){
@@ -42,16 +43,16 @@ function Login(props){
 
     return(
         <div>
-            <section>
+            <section className='login-login'>
                 <h1>
                     facebook or whatever
                 </h1>
-                <div>
+                <div className='login-inputs'>
                     <input placeholder='Email' type='email' onChange={emailInput} />
                     <input placeholder='Password' type='password' maxLength='20' onChange={passwordInput} />
                 </div>
                 <div>
-                    <button onClick={handleLogin} >Log In</button>
+                    <button className='login-button' onClick={handleLogin} >Log In</button>
                 </div>
 
             </section>

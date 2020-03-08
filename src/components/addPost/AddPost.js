@@ -12,14 +12,13 @@ function AddPost(props){
     }
 
     let handleGetPosts=()=>{
-        console.log(props.user)
         axios.get(`/api/posts/${props.user.user_id}`).then(res=>{
-            props.setPosts({posts: res.data})
+            props.setState({posts: res.data})
         }).catch(err => console.log(`this is one crazy error  ${err}`))
     }
 
     let createPost=()=>{
-        axios.post('/api/posts', {post}).then(()=>{
+        axios.post('/api/posts', {post: post}).then(()=>{
             handleGetPosts()
         }).catch(err => console.log(`what's this?  An error!  ${err}`))
     }

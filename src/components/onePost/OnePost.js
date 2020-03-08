@@ -6,11 +6,12 @@ function OnePost(props){
             <section>
                 <img alt='profile pic' />
                 <p>
-                    some name
+                    your name
                 </p>
             </section>
             <p>
-                content or something
+                {console.log(props)}
+                {props.post.post_content}
             </p>
         </div>
     )

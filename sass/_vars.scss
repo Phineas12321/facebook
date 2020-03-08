@@ -1,5 +1,19 @@
-$backgroundColor: dodgerblue;
+$fbBlue: steelblue;
+$fbWhite: white;
 
+::placeholder{
+    font-weight: bold;
+    color: darkblue;
+}
+
+input{
+    border: solid black 1px;
+    outline: none;
+}
+@mixin border($color, $radius){
+    border: solid $color 1px;
+    border-radius: $radius;
+}
 
 @mixin flex($direction, $content, $items){
     display: flex;
