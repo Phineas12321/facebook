@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import './addPost.scss'
 
 function AddPost(props){
 
@@ -25,12 +26,12 @@ function AddPost(props){
 
     return(
         <div>
-            <section>
+            <section className='add-top'>
                 <h1>Create post</h1>
-                <Link to='/home' onClick={createPost} >post</Link>
+                <Link to='/home'><button className='add-top-button' onClick={createPost}>post</button></Link>
             </section>
             <section>
-                <img  alt='profile pic'/>
+                <img className='add-mid-pic' alt='profile pic'/>
                 <h1>{`${props.first_name} ${props.last_name}`}</h1>
             </section>
             <input placeholder="What's on your mind?" onChange={handleInput} />
