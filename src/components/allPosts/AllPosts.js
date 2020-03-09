@@ -45,6 +45,7 @@ class AllPosts extends React.Component{
                         <Link to='/post'><button className='allposts-top-button' >What's on your mind?</button></Link>
                     </div>
                 </section>
+                <section className='filler'></section>
                 <section className='allposts-friends'>
                     <div className='allposts-friends-in'>
                         <Friends/>
@@ -58,6 +59,7 @@ class AllPosts extends React.Component{
                     </div>
                     
                 </section>
+                <section className='filler'></section>
                 <section>
                     {mappedPosts}
                 </section>
