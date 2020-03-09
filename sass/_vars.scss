@@ -1,3 +1,7 @@
+* {
+    margin: 0px;
+}
+
 $fbBlue: steelblue;
 $fbWhite: white;
 
@@ -11,7 +15,9 @@ input{
     outline: none;
 }
 
-
+button{
+    outline: none;
+}
 
 @mixin border($color, $radius){
     border: solid $color 1px;
@@ -23,4 +29,18 @@ input{
     flex-direction: $direction;
     justify-content: $content;
     align-items: $items;
+}
+
+@mixin dims($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin button($width, $height, $radius, $background, $color){
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    background: $background;
+    color: $color;
+    border: none;
 }

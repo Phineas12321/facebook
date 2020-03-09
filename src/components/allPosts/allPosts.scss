@@ -1,1 +1,32 @@
-@import '../../../sass/vars'
+@import '../../../sass/vars';
+
+.allposts-top{
+    @include dims(100vw, 50px);
+    @include flex(row, space-evenly, center);
+    border-bottom: solid grey 1px;
+}
+
+.allposts-top-pic{
+    @include dims(35px, 35px);
+    border-radius: 50%;
+    border: solid black 1px;
+}
+
+.allposts-top-button{
+    @include button(250px, 30px, 50px, $fbWhite, black);
+    border: solid grey 1px;
+    text-align: left;
+}
+
+.allposts-friends{
+    @include dims(100vw, 200px);
+    display: flex;
+    justify-content: center;
+    border-bottom: solid grey 1px;
+}
+
+.allposts-friends-in{
+    display: flex;
+    overflow-x: scroll;
+    width: 100vw;
+}

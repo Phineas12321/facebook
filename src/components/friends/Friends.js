@@ -1,9 +1,12 @@
 import React from 'react'
+import './friends.scss'
 
 function Friends(){
     return(
-        <div>
+        <div className='friends' >
             Friends
+
+            <p className='friends-invisible-text'>_________________</p>
         </div>
     )
 }

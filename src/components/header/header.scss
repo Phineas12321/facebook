@@ -1,0 +1,21 @@
+@import '../../../sass/vars';
+
+.header-top{
+    @include flex(row, space-around, center);
+    @include dims(100vw, 50px);
+    background: $fbWhite;
+    color: $fbBlue;
+
+}
+
+button{
+    @include button(35px, 35px, 50%, $fbBlue, $fbWhite)
+}
+
+.header-bottom{
+    @include dims(100vw, 50px);
+    @include flex(row, space-around, center);
+    border-bottom: solid grey 1px;
+    // position: sticky;
+    // top: 0;
+}

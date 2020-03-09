@@ -5,6 +5,7 @@ import OnePost from '../onePost/OnePost'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {connect} from 'react-redux'
+import './allPosts.scss'
 
 class AllPosts extends React.Component{
     constructor(props){
@@ -39,13 +40,23 @@ class AllPosts extends React.Component{
             <div>
                 <section>
                     <Header/>
-                    <div>
-                        <img alt='profile pic'/>
-                        <Link to='/post'>make a post</Link>
+                    <div className='allposts-top'>
+                        <img alt='profile pic' className='allposts-top-pic' />
+                        <Link to='/post'><button className='allposts-top-button' >What's on your mind?</button></Link>
                     </div>
                 </section>
-                <section>
-                    <Friends/>
+                <section className='allposts-friends'>
+                    <div className='allposts-friends-in'>
+                        <Friends/>
+                        <Friends/>
+                        <Friends/>
+                        <Friends/>
+                        <Friends/>
+                        <Friends/>
+                        <Friends/>
+                        <Friends/>
+                    </div>
+                    
                 </section>
                 <section>
                     {mappedPosts}
