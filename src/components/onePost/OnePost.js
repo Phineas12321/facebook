@@ -12,7 +12,6 @@ function OnePost(props){
                     </p>
                 </div>
                 <p className='post-content'>
-                    {console.log(props)}
                     {props.post.post_content}
                 </p>
             </section>

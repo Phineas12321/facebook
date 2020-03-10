@@ -1,4 +1,6 @@
 import React from 'react'
+import {logout} from '../../redux/reducer'
+import {Link} from 'react-router-dom'
 import './header.scss'
 
 function Header(props){
@@ -13,7 +15,8 @@ function Header(props){
             <section className='header-bottom'>
                 <button>home</button>
                 <button>friends</button>
-                <button>logout</button>
+                <Link to='/' ><button onClick={()=>logout()} >logout</button>
+                </Link>
             </section>
         </div>
     )

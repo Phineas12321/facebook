@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import { getUser } from '../../redux/reducer'
+import {Link} from 'react-router-dom'
+import {register, login} from '../../redux/reducer'
 import './login.scss'
 //import {connect} from 'react-redux'
 
@@ -10,6 +11,7 @@ function Login(props){
     const [password, setPassword] = useState('')
     const [first_name, setFirstName] = useState('')
     const [last_name, setLastName] = useState('')
+    const [registered, setRegistered] = useState(true)
     
     const emailInput = (e) => {
         setEmail(e.target.value)
@@ -27,19 +29,19 @@ function Login(props){
         setLastName(e.target.value)
     }
 
-    const handleRegister = () => {
-        axios.post('/api/register', {email: email, password: password, first_name: first_name, last_name: last_name}).then(res =>{
-            getUser(res.data)
-            props.history.push('/home')
-        }).catch(err => console.log(`just so you know, ${err}`))
-    }
+    // const handleRegister = () => {
+    //     axios.post('/api/register', {email: email, password: password, first_name: first_name, last_name: last_name}).then(res =>{
+    //         getUser(res.data)
+    //         props.history.push('/home')
+    //     }).catch(err => console.log(`just so you know, ${err}`))
+    // }
 
-    const handleLogin = () => {
-        axios.post('/api/login', {email: email, password: password}).then(res => {
-            getUser(res.data)
-            props.history.push('./home')
-        }).catch(err => console.log(`didn't you hear, ${err}`))
-    }
+    // const handleLogin = () => {
+    //     axios.post('/api/login', {email: email, password: password}).then(res => {
+    //         getUser(res.data)
+    //         props.history.push('./home')
+    //     }).catch(err => console.log(`didn't you hear, ${err}`))
+    // }
 
     return(
         <div>
@@ -52,7 +54,8 @@ function Login(props){
                     <input className='l-in' placeholder='Password' type='password' maxLength='20' onChange={passwordInput} />
                 </div>
                 <div>
-                    <button className='login-button' onClick={handleLogin} >Log In</button>
+                    <Link to='/home' ><button className='login-button' onClick={()=>login(email, password)} >Log In</button>
+                    </Link>
                 </div>
 
             </section>
@@ -66,7 +69,9 @@ function Login(props){
                     <input className='lr-in' placeholder='Email' type='email' onChange={emailInput} />
                     <input className='lr-in' placeholder='Password' type='password' maxLength='20' onChange={passwordInput} />
                 </div>
-                <button className='login-register-button' onClick={handleRegister} >Sign Up</button>
+                <Link to='/home'>
+                <button className='login-register-button' onClick={()=>register(email, password, first_name, last_name)} >Sign Up</button>
+                </Link>
             </section>
         </div>
     )

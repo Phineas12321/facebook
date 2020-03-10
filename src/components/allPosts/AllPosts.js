@@ -38,6 +38,7 @@ class AllPosts extends React.Component{
 
         return(
             <div>
+                {console.log(this.props.user)}
                 <section>
                     <Header/>
                     <div className='allposts-top'>
@@ -48,7 +49,7 @@ class AllPosts extends React.Component{
                 </section>
                 <section className='filler'></section>
                 <section className='allposts-friends'>
-                    {console.log(this.props.user)}
+                    
                     <div className='allposts-friends-in'>
                         <Friends/>
                         <Friends/>
