@@ -19,7 +19,8 @@ function AddPost(props){
     }
 
     let createPost=()=>{
-        axios.post('/api/posts', {post: post}).then(()=>{
+        axios.post('/api/posts', {post_content: post, user_id: props.user.user_id}).then(()=>{
+            console.log(props.user)
             handleGetPosts()
         }).catch(err => console.log(`what's this?  An error!  ${err}`))
     }
@@ -32,7 +33,7 @@ function AddPost(props){
             </section>
             <section className='add-mid'>
                 <img className='add-mid-pic' alt='profile pic'/>
-                <h1>{`${props.first_name} ${props.last_name}`}</h1>
+                <h1>{`${props.user.first_name} ${props.user.last_name}`}</h1>
             </section>
             <section className='add-bottom'>
                 <textarea className='add-input' placeholder="What's on your mind?" onChange={handleInput} />

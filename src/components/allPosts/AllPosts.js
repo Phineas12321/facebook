@@ -43,10 +43,12 @@ class AllPosts extends React.Component{
                     <div className='allposts-top'>
                         <img alt='profile pic' className='allposts-top-pic' />
                         <Link to='/post'><button className='allposts-top-button' >What's on your mind?</button></Link>
+
                     </div>
                 </section>
                 <section className='filler'></section>
                 <section className='allposts-friends'>
+                    <div>{console.log(this.props.user)}</div>
                     <div className='allposts-friends-in'>
                         <Friends/>
                         <Friends/>
@@ -57,7 +59,6 @@ class AllPosts extends React.Component{
                         <Friends/>
                         <Friends/>
                     </div>
-                    
                 </section>
                 <section className='filler'></section>
                 <section>
