@@ -30,11 +30,14 @@ function AddPost(props){
                 <h1>Create post</h1>
                 <Link to='/home'><button className='add-top-button' onClick={createPost}>post</button></Link>
             </section>
-            <section>
+            <section className='add-mid'>
                 <img className='add-mid-pic' alt='profile pic'/>
                 <h1>{`${props.first_name} ${props.last_name}`}</h1>
             </section>
-            <input placeholder="What's on your mind?" onChange={handleInput} />
+            <section className='add-bottom'>
+                <textarea className='add-input' placeholder="What's on your mind?" onChange={handleInput} />
+            </section>
+            
         </div>
     )
 }

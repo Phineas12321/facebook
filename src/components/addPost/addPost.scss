@@ -6,6 +6,7 @@
     height: 50px;
     background: $fbBlue;
     border-bottom: solid grey 1px;
+    box-shadow: black 0px 0px 5px -1px;
 }
 
 .add-top-button{
@@ -13,7 +14,31 @@
     font-size: 20px;
 }
 
+.add-mid{
+    @include dims(100vw, 100px);
+    @include flex(row, flex-start, center);
+    border-bottom: solid black 1px;
+}
+
 .add-mid-pic{
     @include border(black, 50%);
     @include dims(50px, 50px);
+}
+
+.add-bottom{
+    margin-top: 10px;
+    @include flex(row, center, center)
+}
+
+.add-input{
+    @include dims(100vw, 400px);
+    border: none;
+    font-size: 20px;
+    text-align: top;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 400px;
+    max-height: 400px;
+    outline: none;
+    resize: none;
 }
