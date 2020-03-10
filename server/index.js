@@ -4,6 +4,7 @@ const massive = require('massive')
 const session = require('express-session')
 const authCtrl = require('./authController')
 const ctrl = require('./controller')
+const checkUser = require('./middleware/checkUser')
 const   {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 
 const app = express()
@@ -14,7 +15,7 @@ app.use(
         resave: false,
         saveUninitialized: true,
         rejectUnauthorized: false,
-        cookie: {maxAge: 1000 * 60 *60 *24},
+        cookie: {maxAge: 1000 * 60 * 60 * 24 * 7},
         secret: SESSION_SECRET
     })
 )
@@ -26,13 +27,17 @@ massive({
     }
 }).then(db => {
     app.set('db', db)
-    app.listen(SERVER_PORT, ()=>console.log(`running on port ${SERVER_PORT}`))
+    console.log('database connected!')
 }) 
 
-app.post('/api/register', authCtrl.register)
-app.post('/api/login', authCtrl.login)
+app.post('/api/register', checkUser, authCtrl.register)
+app.post('/api/login', checkUser, authCtrl.login)
+app.post('/api/logout', authCtrl.logout)
+app.get('/api/user', checkUser)
 
 app.post('/api/posts', ctrl.createPost )
 app.get('/api/posts', ctrl.getPosts)
 app.put('/api/posts/:id', ctrl.editPost)
 app.delete('/api/posts/:id', ctrl.deletePost)
+
+app.listen(SERVER_PORT, ()=>console.log(`running on port ${SERVER_PORT}`))

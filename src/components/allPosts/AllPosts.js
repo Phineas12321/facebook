@@ -48,7 +48,7 @@ class AllPosts extends React.Component{
                 </section>
                 <section className='filler'></section>
                 <section className='allposts-friends'>
-                    <div>{console.log(this.props.user)}</div>
+                    {console.log(this.props.user)}
                     <div className='allposts-friends-in'>
                         <Friends/>
                         <Friends/>

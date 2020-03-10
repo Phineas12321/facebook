@@ -40,10 +40,9 @@ module.exports = {
         }
     },
 
-    getUser: (req, res) => {
-        if (req.session.user){
-            res.status(20).send(req.session.user)
-        }else{
+    logout: (req, res)=>{
+        if(req.session){
+            req.session.destroy()
             res.sendStatus(200)
         }
     }
