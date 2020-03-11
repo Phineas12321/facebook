@@ -38,7 +38,7 @@ class AllPosts extends React.Component{
 
         return(
             <div>
-                {console.log(this.props.user)}
+                {/*console.log(this.props.user)*/}
                 <section>
                     <Header/>
                     <div className='allposts-top'>

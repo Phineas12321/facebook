@@ -1,5 +1,6 @@
 import React from 'react'
 import './onePost.scss'
+import {connect} from 'react-redux'
 
 function OnePost(props){
     return(
@@ -8,7 +9,7 @@ function OnePost(props){
                 <div className='post-top'>
                     <img className='post-pic' alt='profile pic' />
                     <p>
-                        a name
+                        {props.user.first_name}
                     </p>
                 </div>
                 <p className='post-content'>
@@ -20,4 +21,9 @@ function OnePost(props){
     )
 }
 
-export default OnePost
+const mapStateToProps = reduxState => {
+    const {user} = reduxState
+    return {user}
+}
+
+export default connect(mapStateToProps)(OnePost)

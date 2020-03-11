@@ -20,7 +20,7 @@ function AddPost(props){
 
     let createPost=()=>{
         axios.post('/api/posts', {post_content: post, user_id: props.user.user_id}).then(()=>{
-            console.log(props.user)
+            
             handleGetPosts()
         }).catch(err => console.log(`what's this?  An error!  ${err}`))
     }

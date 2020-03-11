@@ -11,10 +11,10 @@ module.exports = {
     },
 
     createPost: (req, res) => {
-        const {id} = req.params
-        const {post_content} = req.body
+        console.log(req.body)
+        const {post_content, user_id} = req.body
         const db = req.app.get('db')
-        db.create_post([post_content]).then(()=>{
+        db.create_post([user_id, post_content]).then(()=>{
             res.sendStatus(201)
         }).catch(()=>{
             res.sendStatus(500)
