@@ -11,6 +11,5 @@ CREATE TABLE ppposts (
     post_id SERIAL PRIMARY KEY,
     user_id INT REFERENCES ppusers(user_id),
     post_content VARCHAR(500)
-
 );
 
