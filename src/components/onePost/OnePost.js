@@ -17,6 +17,10 @@ class OnePost extends React.Component{
     componentDidMount() {
         this.getPost()
       }
+
+      postInput = (e) => {
+        this.setState({post_content: e.target.value})
+      }
     
       getPost = () => {
           console.log(this.props)
@@ -50,7 +54,7 @@ class OnePost extends React.Component{
                             
                         </div>
                         {this.state.isEdit ?  (
-                            <textarea className='post-edit' value={this.props.post.post_content}></textarea>
+                            <textarea className='post-edit' defaultValue={this.props.post.post_content} onChange={()=>this.postInput} ></textarea>
                         ) : (
                             <p className='post-content'>
                                 {this.props.post.post_content}
