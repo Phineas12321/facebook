@@ -9,7 +9,8 @@ class OnePost extends React.Component{
         super(props)
 
         this.state = {
-            post: {}
+            post: {},
+            isEdit: false
         }
     }
 
@@ -32,18 +33,47 @@ class OnePost extends React.Component{
 
         return(
             <div>
-
-                <section className='post'>
-                    <div className='post-top'>
-                        <div className='post-pic'></div>
-                        <p>
-                            {this.props.post.first_name}
+                {this.props.post.user_id === this.props.user.user_id ? (
+                    <section className='post'>
+                        <div className='post-top'>
+                            <div className='post-top-first'>
+                                <div className='post-pic'></div>
+                                <p>
+                                    {this.props.post.first_name}
+                                </p>
+                            </div>
+                                <button className='one-post-button' onClick={()=>this.setState({isEdit: !this.state.isEdit})}>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </button>
+                            
+                        </div>
+                        {this.state.isEdit ?  (
+                            <textarea className='post-edit' value={this.props.post.post_content}></textarea>
+                        ) : (
+                            <p className='post-content'>
+                                {this.props.post.post_content}
+                            </p>
+                        )}
+                        
+                    </section>
+                    
+                ) : (
+                    <section className='post'>
+                        <div className='post-top'>
+                            <div className='post-top-first'>
+                                <div className='post-pic'></div>
+                                <p>
+                                    {this.props.post.first_name}
+                                </p>
+                            </div>
+                        </div>
+                        <p className='post-content'>
+                            {this.props.post.post_content}
                         </p>
-                    </div>
-                    <p className='post-content'>
-                        {this.props.post.post_content}
-                    </p>
-                </section>
+                    </section>
+                )}
                 <section className='filler'></section>
             </div>
         )

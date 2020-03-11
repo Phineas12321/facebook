@@ -1,7 +1,5 @@
 module.exports = {
     getPosts: async (req, res) => {
-        console.log(req.params)
-        //const {user_id} = req.body
         const db = req.app.get('db')
         const posts = await db.get_post()
         if (posts !== []){
