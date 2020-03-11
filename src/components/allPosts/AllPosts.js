@@ -42,7 +42,7 @@ class AllPosts extends React.Component{
                 <section>
                     <Header/>
                     <div className='allposts-top'>
-                        <img alt='profile pic' className='allposts-top-pic' />
+                        <div className='allposts-top-pic'></div>
                         <Link to='/post'><button className='allposts-top-button' >What's on your mind?</button></Link>
 
                     </div>

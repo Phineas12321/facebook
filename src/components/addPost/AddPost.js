@@ -32,7 +32,7 @@ function AddPost(props){
                 <Link to='/home'><button className='add-top-button' onClick={createPost}>post</button></Link>
             </section>
             <section className='add-mid'>
-                <img className='add-mid-pic' alt='profile pic'/>
+                <div className='add-mid-pic'></div>
                 <h1>{`${props.user.first_name} ${props.user.last_name}`}</h1>
             </section>
             <section className='add-bottom'>

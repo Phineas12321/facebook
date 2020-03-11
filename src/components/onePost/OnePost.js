@@ -35,7 +35,7 @@ class OnePost extends React.Component{
 
                 <section className='post'>
                     <div className='post-top'>
-                        <img className='post-pic' alt='profile pic' />
+                        <div className='post-pic'></div>
                         <p>
                             {this.props.post.first_name}
                         </p>

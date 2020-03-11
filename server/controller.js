@@ -12,7 +12,6 @@ module.exports = {
     },
 
     createPost: (req, res) => {
-        console.log(req.body)
         const {post_content, user_id} = req.body
         const db = req.app.get('db')
         db.create_post([user_id, post_content]).then(()=>{
