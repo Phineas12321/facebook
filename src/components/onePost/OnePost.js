@@ -11,7 +11,7 @@ class OnePost extends React.Component{
         this.state = {
             post: {},
             isEdit: false,
-            content: this.props.post.post_content
+            post_content: this.props.post.post_content
         }
     }
 
@@ -35,9 +35,9 @@ class OnePost extends React.Component{
       }
 
       editPost = () => {
-          console.log(this.props.post)
         const {post_id} = this.props.post
-        axios.put(`/api/posts/${post_id}`, this.state.content).then(() => {
+        const {post_content} = this.state
+        axios.put(`/api/posts/${post_id}`, {post_content}).then(() => {
             this.setState({isEdit: false})
             this.getPost()
         }).catch(err => console.log(err))
@@ -75,7 +75,8 @@ class OnePost extends React.Component{
                             <>
                                 <button onClick={()=>this.deletePost()} >delete</button>
                                 <button onClick={()=>this.editPost()} >edit</button>
-                                <textarea className='post-edit' defaultValue={this.props.post.post_content} onChange={(e)=> this.setState({content: e.target.value})} ></textarea>
+                                <textarea className='post-edit' defaultValue={this.props.post.post_content} onChange={(e)=> this.setState({post_content: e.target.value})} ></textarea>
+                                {console.log(this.state.content)}
                             </>
                         ) : (
                             <p className='post-content'>
