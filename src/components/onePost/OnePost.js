@@ -10,27 +10,44 @@ class OnePost extends React.Component{
 
         this.state = {
             post: {},
-            isEdit: false
+            isEdit: false,
+            content: this.props.post.post_content
         }
     }
 
     componentDidMount() {
         this.getPost()
+        this.setState({isEdit: false})
       }
 
       postInput = (e) => {
-        this.setState({post_content: e.target.value})
+        console.log(this.state.content)
+        this.setState({content: e.target.value})
       }
     
       getPost = () => {
-          console.log(this.props)
         const { post_id } = this.props.post
         axios
           .get(`/api/post/${post_id}`)
           .then(res => {
-            this.setState({ post: this.props.post })
+            this.setState({ post: res.data })
           })
           .catch(err => console.log(err))
+      }
+
+      editPost = () => {
+          console.log(this.props.post)
+        const {post_id} = this.props.post
+        axios.put(`/api/posts/${post_id}`, this.state.content).then(() => {
+            this.getPost()
+        }).catch(err => console.log(err))
+      }
+
+      deletePost = () => {
+          const {post_id} = this.props.post
+          axios.delete(`/api/posts/${post_id}`).then(()=>{
+              this.getPost()
+          }).catch(err => console.log(err))
       }
 
     render(){
@@ -54,7 +71,11 @@ class OnePost extends React.Component{
                             
                         </div>
                         {this.state.isEdit ?  (
-                            <textarea className='post-edit' defaultValue={this.props.post.post_content} onChange={()=>this.postInput} ></textarea>
+                            <>
+                                <button onClick={()=>this.deletePost()} >delete</button>
+                                <button onClick={()=>this.editPost()} >edit</button>
+                                <textarea className='post-edit' defaultValue={this.props.post.post_content} onChange={(e)=> this.setState({content: e.target.value})} ></textarea>
+                            </>
                         ) : (
                             <p className='post-content'>
                                 {this.props.post.post_content}
