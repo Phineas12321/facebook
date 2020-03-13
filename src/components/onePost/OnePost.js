@@ -16,7 +16,6 @@ class OnePost extends React.Component{
     }
 
     componentDidMount() {
-        this.getPost()
         this.setState({isEdit: false})
       }
 
@@ -24,22 +23,13 @@ class OnePost extends React.Component{
         console.log(this.state.content)
         this.setState({content: e.target.value})
       }
-    
-      getPost = () => {
-        axios
-          .get(`/api/posts`)
-          .then(res => {
-            this.setState({ post: res.data })
-          })
-          .catch(err => console.log(err))
-      }
 
       editPost = () => {
         const {post_id} = this.props.post
         const {post_content} = this.state
         axios.put(`/api/posts/${post_id}`, {post_content}).then(() => {
             this.setState({isEdit: false})
-            this.getPost()
+            this.props.handleGetPosts()
         }).catch(err => console.log(err))
       }
 
@@ -47,7 +37,7 @@ class OnePost extends React.Component{
           const {post_id} = this.props.post
           axios.delete(`/api/posts/${post_id}`).then(()=>{
               this.setState({isEdit: false})
-              this.getPost()
+              this.props.handleGetPosts()
           }).catch(err => console.log(err))
       }
 

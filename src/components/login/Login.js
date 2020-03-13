@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-//import axios from 'axios'
+import axios from 'axios'
 import {Link} from 'react-router-dom'
 import {register, login} from '../../redux/reducer'
 import './login.scss'
@@ -41,7 +41,8 @@ function Login(props){
                     <input className='lr-in' placeholder='Password' type='password' maxLength='20' onChange={e=>setPassword(e.target.value)} />
                 </div>
                 <Link to='/home'>
-                <button className='login-register-button' onClick={()=>props.register(email, password, first_name, last_name)} >Sign Up</button>
+                <button className='login-register-button' onClick={()=>{props.register(email, password, first_name, last_name)
+                axios.post(`/api/email`, {email})}} >Sign Up</button>
                 </Link>
             </section>
         </div>

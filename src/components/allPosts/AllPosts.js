@@ -32,6 +32,7 @@ class AllPosts extends React.Component{
                 <OnePost
                     key = {i}
                     post = {e}
+                    handleGetPosts = {this.handleGetPosts}
                 />
             )
         })

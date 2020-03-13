@@ -3,6 +3,7 @@ const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
 const authCtrl = require('./authController')
+const mailCtrl = require('./mailController')
 const ctrl = require('./controller')
 const checkUser = require('./middleware/checkUser')
 const   {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
@@ -30,10 +31,14 @@ massive({
     console.log('database connected!')
 }) 
 
+
+
 app.post('/api/register', checkUser, authCtrl.register)
 app.post('/api/login', checkUser, authCtrl.login)
 app.post('/api/logout', authCtrl.logout)
 app.get('/api/user', checkUser)
+
+app.post('/api/email', mailCtrl.sendEmail)
 
 app.post('/api/posts', ctrl.createPost )
 app.get('/api/posts', ctrl.getPosts)
