@@ -1,10 +1,17 @@
 @import '../../../sass/vars';
 
+// .header-all{
+//     border-bottom: solid grey 1px;
+// }
+
 .header-top{
     @include flex(row, space-around, center);
     @include dims(100vw, 50px);
     background: $fbWhite;
     color: $fbBlue;
+    border-bottom: solid rgb(228, 228, 228) 1px;
+    position: fixed;
+    top: 0px;
     button{
         @include button(35px, 35px, 50%, $fbBlue, $fbWhite);
         text-align: center;
@@ -12,14 +19,12 @@
     }
 }
 
-
-
 .header-bottom{
     @include dims(100vw, 50px);
     @include flex(row, space-around, center);
+    background: $fbWhite;
     border-bottom: solid grey 1px;
-    // position: sticky;
-    // top: 0;
+    margin-top: 50px;
     button{
         @include button(35px, 35px, 50%, $fbBlue, $fbWhite);
         text-align: center;

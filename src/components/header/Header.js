@@ -5,21 +5,20 @@ import './header.scss'
 
 function Header(props){
     return(
-        <div>
+        <div className='header-all'>
             <section className='header-top'>
                 <h3>facebook or whatever</h3>
-                <Link to='/users'> 
-                    <button>
-                        Search Users
-                    </button>
-                </Link>
-            </section>
-            <section className='header-bottom'>
-                <Link to='/home' ><button>home</button></Link>
-                <button>friends</button>
                 <Link to='/' >
                     <button onClick={()=>logout()} >logout</button>
                 </Link>
+            </section>
+            
+            <section className='header-bottom'>
+                <Link to='/home' ><button>home</button></Link>
+                <button>friends</button>
+                <button>
+                    Search Users
+                </button>
             </section>
         </div>
     )
