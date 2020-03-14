@@ -3,7 +3,7 @@ import './onePost.scss'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
-
+  
 function OnePost(props){
 
     //const [post, setPost] = useState({})

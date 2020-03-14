@@ -10,5 +10,5 @@ function PostBar(){
         </div>
     )
 }
-
+  
 export default PostBar

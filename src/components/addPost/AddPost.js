@@ -3,7 +3,7 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import './addPost.scss'
-
+  
 function AddPost(props){
 
     const [post, setPost] = useState('')
