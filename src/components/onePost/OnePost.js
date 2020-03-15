@@ -36,9 +36,10 @@ function OnePost(props){
                 <section className='post'>
                     <div className='post-top'>
                         <div className='post-top-first'>
-                            <div className='post-pic'></div>
+                            <img className='post-pic'  src={props.post.profile_img} />
                             <p>
-                                {props.post.first_name}
+                                {props.post.first_name + ' '} 
+                                {props.post.last_name}
                             </p>
                         </div>
                             <button className='one-post-button' onClick={()=>setIsEdit(!isEdit)}>
@@ -66,9 +67,10 @@ function OnePost(props){
                 <section className='post'>
                     <div className='post-top'>
                         <div className='post-top-first'>
-                            <div className='post-pic'></div>
+                            <img className='post-pic' src={props.post.profile_img} />
                             <p>
-                                {props.post.first_name}
+                                {props.post.first_name + ' '} 
+                                {props.post.last_name}
                             </p>
                         </div>
                     </div>

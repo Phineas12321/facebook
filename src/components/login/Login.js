@@ -18,7 +18,7 @@ function Login(props){
         <div>
             <section className='login-login'>
                 <h1>
-                    facebook or whatever
+                    fb or whatever
                 </h1>
                 <div className='login-inputs'>
                     <input className='l-in' placeholder='Email' type='email' onChange={e=>setEmail(e.target.value)} />

@@ -7,7 +7,7 @@ function Header(props){
     return(
         <div className='header-all'>
             <section className='header-top'>
-                <h3>facebook or whatever</h3>
+                <h3>fb or whatever</h3>
                 <Link to='/' >
                     <button onClick={()=>logout()} >logout</button>
                 </Link>

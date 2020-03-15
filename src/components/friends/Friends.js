@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './friends.scss'
 
 function Friends(){
+
+    const [img, setImg] = useState('')
+
+    //img =
+
     return(
         <div className='friends' >
             Friends
