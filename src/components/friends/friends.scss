@@ -1,8 +1,15 @@
 @import '../../../sass/vars';
 
 .friends{
+    @include flex(column, center, center);
     border: solid grey 1px;
     margin: 10px 10px 10px 10px;
+    background: $fbBlue;
+}
+
+.friends-pic{
+    width: 120px;
+    height: 120px;
 }
 
 .friends-invisible-text{

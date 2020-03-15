@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './friends.scss'
+import './other.scss'
 
 function PostBar(){
 

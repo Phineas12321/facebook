@@ -37,7 +37,7 @@ function AllPosts (props){
             <section>
                 <Header/>
                 <div className='allposts-top'>
-                    <img className='allposts-top-pic'  src={props.user.profile_img} />
+                    <img className='allposts-top-pic'  src={props.user.profile_img} alt=''/>
                     <Link to='/post'><button className='allposts-top-button' >What's on your mind?</button></Link>
 
                 </div>
@@ -46,13 +46,6 @@ function AllPosts (props){
             <section className='allposts-friends'>
                 
                 <div className='allposts-friends-in'>
-                    <Friends/>
-                    <Friends/>
-                    <Friends/>
-                    <Friends/>
-                    <Friends/>
-                    <Friends/>
-                    <Friends/>
                     <Friends/>
                 </div>
             </section>

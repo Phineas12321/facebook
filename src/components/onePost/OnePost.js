@@ -5,8 +5,6 @@ import {withRouter} from 'react-router-dom'
 import axios from 'axios'
   
 function OnePost(props){
-
-    //const [post, setPost] = useState({})
     const [isEdit, setIsEdit] = useState(false)
     const [post_content, setPostContent] = useState(props.post.post_content)
 
@@ -36,7 +34,7 @@ function OnePost(props){
                 <section className='post'>
                     <div className='post-top'>
                         <div className='post-top-first'>
-                            <img className='post-pic'  src={props.post.profile_img} />
+                            <img className='post-pic'  src={props.post.profile_img} alt=''/>
                             <p>
                                 {props.post.first_name + ' '} 
                                 {props.post.last_name}
@@ -67,7 +65,7 @@ function OnePost(props){
                 <section className='post'>
                     <div className='post-top'>
                         <div className='post-top-first'>
-                            <img className='post-pic' src={props.post.profile_img} />
+                            <img className='post-pic' src={props.post.profile_img} alt=''/>
                             <p>
                                 {props.post.first_name + ' '} 
                                 {props.post.last_name}
