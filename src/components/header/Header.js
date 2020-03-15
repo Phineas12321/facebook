@@ -15,7 +15,7 @@ function Header(props){
             
             <section className='header-bottom'>
                 <Link to='/home' ><button>home</button></Link>
-                <button>friends</button>
+                <Link to='/other'><button>other</button></Link>
                 <button>
                     Search Users
                 </button>

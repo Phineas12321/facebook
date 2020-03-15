@@ -1,16 +1,18 @@
 import React, {useState} from 'react'
+import Header from '../header/Header'
 import './other.scss'
 
-function PostBar(){
+function Other(){
 
-    const [n, setN] = useState(0)
+    let [n, setN] = useState(0)
 
     return(
-        <div className='friends' >
-            
-            <p className='friends-invisible-text'>_________________</p>
+        <div className='other' >
+            <Header/>
+            <h1>{`you clicked this button ${n} times`}</h1>
+            <button className='other-button' onClick={()=>setN(n+1)}>click it!</button>
         </div>
     )
 }
   
-export default PostBar
+export default Other
