@@ -1,9 +1,5 @@
 @import '../../../sass/vars';
 
-// .header-all{
-//     border-bottom: solid grey 1px;
-// }
-
 .header-top{
     @include flex(row, space-around, center);
     @include dims(100vw, 50px);
@@ -29,5 +25,40 @@
         @include button(35px, 35px, 50%, $fbBlue, $fbWhite);
         text-align: center;
         font-size: 7px;
+    }
+}
+
+
+
+
+
+
+@media(min-width: 450px){
+    .header-top{
+        @include flex(row, space-around, center);
+        @include dims(50vw, 50px);
+        background: $fbWhite;
+        color: $fbBlue;
+        position: absolute;
+        border-bottom: solid grey 1px;
+        button{
+            @include button(35px, 35px, 50%, $fbBlue, $fbWhite);
+            text-align: center;
+            font-size: 7px;
+        }
+    }
+
+    .header-bottom{
+        @include dims(50vw, 50px);
+        @include flex(row, space-around, center);
+        background: $fbWhite;
+        border-bottom: solid grey 1px;
+        margin-top: 0px;
+        margin-left: 50vw;
+        button{
+            @include button(35px, 35px, 50%, $fbBlue, $fbWhite);
+            text-align: center;
+            font-size: 7px;
+        }
     }
 }

@@ -23,6 +23,7 @@
 .add-mid-pic{
     @include border(black, 50%);
     @include dims(50px, 50px);
+    margin: 20px;
 }
 
 .add-bottom{
@@ -41,4 +42,45 @@
     max-height: 400px;
     outline: none;
     resize: none;
+}
+
+
+
+
+
+@media(min-width: 450px){
+    .add-top{
+
+        @include flex(row, flex-start, center);
+        height: 50px;
+        background: $fbBlue;
+        border-bottom: solid grey 1px;
+        box-shadow: black 0px 0px 5px -1px;
+        padding-left: 40px;
+    }
+
+    .add-top-button{
+        @include button(100px, 30px, 3px, $fbBlue, $fbWhite);
+        font-size: 20px;
+        margin-left: 80px;
+    }
+
+    .add-mid-pic{
+        @include border(black, 50%);
+        @include dims(80px, 80px);
+        margin: 20px;
+    }
+
+    .add-input{
+        @include dims(100vw, 400px);
+        border: none;
+        font-size: 20px;
+        text-align: top;
+        min-width: 800px;
+        max-width: 800px;
+        min-height: 400px;
+        max-height: 400px;
+        outline: none;
+        resize: none;
+    }
 }

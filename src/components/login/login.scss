@@ -63,3 +63,41 @@
     font-size: 20px;
     margin-bottom: 30px;
 }
+
+
+
+
+@media (min-width: 450px){
+    .login-login{
+        height: 70px;
+        background: $fbBlue;
+        color: $fbWhite;
+        @include flex(row, space-between, center);
+        box-shadow: black 0px 0px 5px -1px;
+        border-bottom: solid rgb(46, 94, 133) 1px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    
+    .login-inputs{
+        width: 850px;
+        @include flex(row, flex-end, center);
+    }
+
+    .l-in{
+        height: 18px;
+        width: 150px;
+        font-size: 15px;
+        margin-left: 30px;
+    }
+
+    .login-register{
+        height: 450px;
+        width: 330px;
+        margin-right: 100px;
+        margin-top: 70px;
+        @include border(none, 2px);
+        @include flex(column, center, center);
+        box-shadow: black 0px 0px 10px -7px;
+    }
+}

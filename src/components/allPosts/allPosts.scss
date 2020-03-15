@@ -31,3 +31,30 @@
     overflow-x: auto;
     width: 100vw;
 }
+
+
+
+
+
+
+@media (min-width: 450px){
+    .allposts-top{
+        @include dims(100vw, 50px);
+        @include flex(row, flex-start, center);
+        border-bottom: solid grey 1px;
+    }
+
+    .allposts-top-pic{
+        @include dims(35px, 35px);
+        border-radius: 50%;
+        border: solid black 1px;
+        margin-right: 200px;
+        margin-left: 20px;
+    }
+    
+    .allposts-top-button{
+        @include button(550px, 30px, 5px, $fbWhite, black);
+        border: solid grey 1px;
+        text-align: left;
+    }
+}
