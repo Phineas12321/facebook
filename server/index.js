@@ -20,6 +20,7 @@ app.use(
         secret: SESSION_SECRET
     })
 )
+app.use( express.static( `${__dirname}/../build` ) );
 
 massive({
     connectionString: CONNECTION_STRING,
